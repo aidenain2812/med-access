@@ -1,533 +1,86 @@
-* {
-  box-sizing: border-box;
-}
+/* ===== FINAL GOVERNMENT PORTAL LAYOUT ===== */
 
-:root {
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #eef7f1;
-  background: #07110d;
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  background: #07110d;
-  color: #eef7f1;
+  background: #f5f7f6;
 }
 
-button,
-input,
-textarea,
-select {
-  font: inherit;
+/* Every major section gets a centered content area */
+.header-inner,
+.gov-strip-inner,
+.container,
+.footer-inner {
+  width: 100% !important;
+  max-width: 1120px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-button {
-  cursor: pointer;
-}
-
-/* =========================
-   APP
-========================= */
-
-.app {
-  min-height: 100vh;
-  background: #07110d;
-}
-
-/* =========================
-   TOP GOVERNMENT STRIP
-========================= */
-
-.gov-strip {
-  background: #050c09;
-  border-bottom: 1px solid #183126;
-  color: #7f988b;
-  font-size: 11px;
-}
-
-.gov-strip-inner {
-  width: min(1100px, calc(100% - 48px));
-  margin: auto;
-  padding: 8px 0;
-  display: flex;
-  justify-content: space-between;
-}
-
-/* =========================
-   HEADER
-========================= */
-
-.header {
-  background: #0a1711;
-  border-bottom: 1px solid #203d2e;
-}
-
-.header-inner {
-  width: min(1100px, calc(100% - 48px));
-  margin: auto;
-  padding: 18px 0;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.emblem {
-  width: 42px;
-  height: 42px;
-  border-radius: 9px;
-  background: #19a968;
-  border: none;
-  color: white;
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  font-size: 12px;
-}
-
-.brand-title {
-  color: #f2fff7;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.brand-sub {
-  color: #829c8e;
-  font-size: 12px;
-  margin-top: 2px;
-}
-
-/* =========================
-   MAIN CONTAINER
-========================= */
-
+/* Main page */
 .container {
-  width: min(1100px, calc(100% - 48px));
-  margin: 0 auto;
-  padding: 55px 0 80px;
+  padding: 40px 24px 70px !important;
 }
 
-/* =========================
-   HERO
-========================= */
-
+/* Don't let hero/cards stretch awkwardly */
 .hero {
-  background: #0d1b14;
-  border: 1px solid #203d2e;
-  border-radius: 14px;
-  padding: 55px 60px;
-  margin-bottom: 42px;
+  width: 100% !important;
+  max-width: 1050px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-.hero h1 {
-  color: #f2fff7;
-  font-size: 34px;
-  line-height: 1.2;
-  margin: 0;
-  max-width: 850px;
-}
-
-.hero p {
-  color: #91aa9c;
-  max-width: 700px;
-  line-height: 1.7;
-  margin: 14px 0 0;
-}
-
-/* =========================
-   SEARCH
-========================= */
-
+/* Search */
 .search-row {
-  display: flex;
-  gap: 12px;
-  width: 100%;
-  max-width: 900px;
-  margin-top: 30px;
+  width: 100% !important;
+  max-width: 850px !important;
 }
 
-.search-box {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  background: #08130e;
-  border: 1px solid #315442;
-  border-radius: 8px;
-}
-
-.search-box:focus-within {
-  border-color: #25c47d;
-  box-shadow: 0 0 0 2px rgba(37, 196, 125, 0.12);
-}
-
-.search-icon {
-  padding-left: 15px;
-  color: #6f8b7d;
-}
-
-.search-box input {
-  width: 100%;
-  border: none;
-  outline: none;
-  background: transparent;
-  color: #f2fff7;
-  padding: 14px;
-}
-
-.search-box input::placeholder {
-  color: #637d70;
-}
-
-.primary {
-  background: #19a968;
-  border: 1px solid #19a968;
-  color: white;
-  padding: 13px 23px;
-  border-radius: 8px;
-  font-weight: 700;
-}
-
-.primary:hover {
-  background: #20bd78;
-}
-
-/* =========================
-   STATUS NOTICE
-========================= */
-
-.notice {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  background: #0b2519;
-  border: 1px solid #216341;
-  color: #9de0bb;
-  padding: 13px 15px;
-  margin-top: 22px;
-  border-radius: 8px;
-  font-size: 12px;
-}
-
-/* =========================
-   SECTION HEADINGS
-========================= */
-
-.section-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 15px;
-  margin-top: 42px;
-  margin-bottom: 18px;
-}
-
-.section-head h2 {
-  margin: 0;
-  color: #f2fff7;
-  font-size: 20px;
-}
-
-.section-head p {
-  margin: 4px 0 0;
-  color: #81998c;
-  font-size: 12px;
-}
-
-/* =========================
-   RESULTS
-========================= */
-
-.results-meta {
-  color: #81998c;
-  font-size: 13px;
-  margin-bottom: 14px;
-}
-
+/* Results */
+.section-head,
+.results-meta,
 .results {
-  display: grid;
-  gap: 14px;
+  width: 100% !important;
+  max-width: 1050px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .result-card {
-  background: #0d1b14;
-  border: 1px solid #203d2e;
-  border-radius: 12px;
-  padding: 23px;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-.result-card:hover {
-  border-color: #28754e;
+/* Header */
+.header-inner {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
 }
 
-.result-top {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
+/* Government strip */
+.gov-strip-inner {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
 }
 
-.facility-name {
-  color: #f2fff7;
-  font-size: 18px;
-  font-weight: 700;
-  margin: 0;
-}
-
-.facility-type {
-  color: #88a397;
-  font-size: 12px;
-  margin-top: 3px;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 9px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.verified {
-  background: #103a27;
-  color: #54d894;
-}
-
-.unverified {
-  background: #3b3014;
-  color: #e5bd55;
-}
-
-.stock {
-  font-size: 20px;
-  font-weight: 700;
-  margin-top: 18px;
-}
-
-.stock.available {
-  color: #35d58a;
-}
-
-.stock.limited {
-  color: #e5bd55;
-}
-
-.stock.low {
-  color: #ed6868;
-}
-
-.result-details {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin: 18px 0;
-  padding: 16px 0;
-  border-top: 1px solid #1d3428;
-  border-bottom: 1px solid #1d3428;
-}
-
-.detail-label {
-  color: #71897d;
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.detail-value {
-  color: #dce9e1;
-  font-size: 13px;
-  margin-top: 3px;
-}
-
-.result-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-.call-link,
-.secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #10271c;
-  border: 1px solid #2a6848;
-  color: #54d894;
-  padding: 10px 15px;
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.call-link:hover,
-.secondary:hover {
-  background: #153a28;
-}
-
-/* =========================
-   ADMIN / OTHER CARDS
-========================= */
-
-.card,
-.quick,
-.stat,
-.table-wrap,
-.sidebar {
-  background: #0d1b14;
-  border: 1px solid #203d2e;
-  box-shadow: none;
-  color: #eef7f1;
-}
-
-.card {
-  padding: 22px;
-  border-radius: 12px;
-}
-
-.quick {
-  padding: 18px;
-  border-radius: 10px;
-}
-
-.quick-title,
-.stat-value {
-  color: #f2fff7;
-}
-
-.quick-text,
-.stat-label {
-  color: #81998c;
-}
-
-/* =========================
-   FORMS
-========================= */
-
-input,
-textarea,
-select {
-  width: 100%;
-  background: #08130e;
-  border: 1px solid #315442;
-  color: #eef7f1;
-  border-radius: 7px;
-  padding: 11px;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-  border-color: #22b975;
-}
-
-/* =========================
-   TABLES
-========================= */
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th {
-  background: #102119;
-  color: #91aa9c;
-  text-align: left;
-  padding: 12px;
-  font-size: 11px;
-}
-
-td {
-  color: #dce9e1;
-  padding: 12px;
-  border-top: 1px solid #1d3428;
-}
-
-/* =========================
-   SIDEBAR
-========================= */
-
-.sidebar button {
-  background: #0d1b14;
-  color: #a5b9ae;
-  border: none;
-  border-bottom: 1px solid #1d3428;
-  padding: 13px;
-}
-
-.sidebar button.active {
-  background: #103a27;
-  color: #54d894;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-  background: #050c09;
-  color: #81998c;
-  border-top: 1px solid #183126;
-}
-
+/* Footer */
 .footer-inner {
-  width: min(1100px, calc(100% - 48px));
-  margin: auto;
-  padding: 25px 0;
-  font-size: 11px;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
 }
 
-.footer strong {
-  color: #54d894;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 700px) {
-
+/* Prevent content from touching screen edges */
+@media (min-width: 1200px) {
   .container {
-    width: calc(100% - 28px);
-    padding: 30px 0 50px;
-  }
-
-  .hero {
-    padding: 30px 24px;
-  }
-
-  .hero h1 {
-    font-size: 27px;
-  }
-
-  .search-row {
-    flex-direction: column;
-  }
-
-  .result-top {
-    flex-direction: column;
-  }
-
-  .result-details {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .result-actions {
-    flex-direction: column;
-  }
-
-  .call-link,
-  .result-actions button {
-    width: 100%;
-  }
-
-  .gov-strip-inner {
-    width: calc(100% - 28px);
-  }
-
-  .header-inner {
-    width: calc(100% - 28px);
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
