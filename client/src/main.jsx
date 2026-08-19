@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.css';
 
-const API = 'http://localhost:5001/api';
+const API = `${import.meta.env.VITE_API_URL}/api`;
 
 function App(){
   const [mode,setMode]=useState('public');
