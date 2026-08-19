@@ -1,5 +1,7 @@
 /* ===== FINAL GOVERNMENT PORTAL LAYOUT ===== */
-
+body {
+  background: red !important;
+}
 html,
 body,
 #root {
